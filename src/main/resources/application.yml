@@ -1,0 +1,13 @@
+server:
+  port: 8081
+
+
+spring:
+  application:
+    name: order-xml-filtered
+  datasource:
+    url: jdbc:mysql://localhost:3306/db?user=root&password=password
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true

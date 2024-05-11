@@ -1,0 +1,135 @@
+{
+	"info": {
+		"_postman_id": "4ec2061a-475d-4731-854e-29b94dddae1f",
+		"name": "OrderXmlApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32845980"
+	},
+	"item": [
+		{
+			"name": "Register XML",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<Orders>\r\n    <Order>\r\n        <controlNumber>10013</controlNumber>\r\n        <clientId>2</clientId>\r\n        <productName>Gel</productName>\r\n        <unitValue>10.90</unitValue>\r\n        <quantity>5</quantity>\r\n    </Order>\r\n        <Order>\r\n        <controlNumber>10014</controlNumber>\r\n        <clientId>2</clientId>\r\n        <productName>Pão</productName>\r\n        <unitValue>2.90</unitValue>\r\n        <quantity>3</quantity>\r\n    </Order>\r\n        <Order>\r\n        <controlNumber>10015</controlNumber>\r\n        <clientId>2</clientId>\r\n        <productName>Pá</productName>\r\n        <unitValue>100.90</unitValue>\r\n    </Order>\r\n        <Order>\r\n        <controlNumber>10016</controlNumber>\r\n        <clientId>7</clientId>\r\n        <productName>Óculos</productName>\r\n        <unitValue>222.90</unitValue>\r\n    </Order>\r\n        <Order>\r\n        <controlNumber>10017</controlNumber>\r\n        <clientId>7</clientId>\r\n        <productName>Água</productName>\r\n        <unitValue>1.90</unitValue>\r\n        <quantity>13</quantity>\r\n    </Order>\r\n</Orders>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/orders",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register JSON",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"controlNumber\": 10012,\r\n        \"clientId\": 2,\r\n        \"productName\": \"Gel\",\r\n        \"unitValue\": 10.90\r\n    }\r\n\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/orders",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAll",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/orders?date=2024-05-10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"orders"
+					],
+					"query": [
+						{
+							"key": "date",
+							"value": "2024-05-10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetById",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/orders/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"orders",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
