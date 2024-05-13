@@ -100,10 +100,10 @@ class OrderServiceTest {
         underTest.register(ordersMock);
 
         //then
-        ArgumentCaptor<List<Order>> userArgumentCaptor = ArgumentCaptor.forClass(List.class);
-        verify(orderRepository).saveAll(userArgumentCaptor.capture());
+        ArgumentCaptor<List<Order>> orderArgumentCaptor = ArgumentCaptor.forClass(List.class);
+        verify(orderRepository).saveAll(orderArgumentCaptor.capture());
 
-        List<Order> capturedOrder = userArgumentCaptor.getValue();
+        List<Order> capturedOrder = orderArgumentCaptor.getValue();
         assertThat(capturedOrder).isEqualTo(ordersMock);
     }
 
