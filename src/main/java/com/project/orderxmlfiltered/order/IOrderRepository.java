@@ -1,4 +1,4 @@
-package com.project.orderxmlfiltered;
+package com.project.orderxmlfiltered.order;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -13,7 +13,7 @@ import java.util.Optional;
 public interface IOrderRepository extends JpaRepository<Order, Long> {
     Optional<Order> findByControlNumber(Long controlNumber);
 
-    @Query("SELECT o FROM Order o WHERE DATE(o.registerDate) = :date")
+    @Query("SELECT o FROM Order o WHERE CAST(o.registerDate AS DATE) = :date")
     List<Order> findByRegisterDate(LocalDate date);
 
 }

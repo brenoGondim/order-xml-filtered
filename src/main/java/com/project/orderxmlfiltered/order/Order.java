@@ -1,4 +1,4 @@
-package com.project.orderxmlfiltered;
+package com.project.orderxmlfiltered.order;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

@@ -1,4 +1,4 @@
-package com.project.orderxmlfiltered;
+package com.project.orderxmlfiltered.order;
 
 import com.project.orderxmlfiltered.exception.AlreadyExistsException;
 import com.project.orderxmlfiltered.exception.NotFoundException;
@@ -16,7 +16,7 @@ public class OrderService implements IOrderService {
     public List<Order> register(List<Order> orders) {
         orders.forEach(order -> {
             repository.findByControlNumber(order.getControlNumber())
-                    .ifPresent(u -> { throw new AlreadyExistsException("order.controlNumber'", String.valueOf(order.getControlNumber()));});
+                    .ifPresent(u -> { throw new AlreadyExistsException("order.controlNumber", String.valueOf(order.getControlNumber()));});
             order.setTotalValue(calcTotalValue(order));
         });
         return repository.saveAll(orders);
